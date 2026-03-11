@@ -27,6 +27,10 @@ const connectDB = async () => {
 const startServer = async () => {
   try {
     await connectDB();
+
+    // routes go here
+    app.use("/api", router);
+
     app.listen(PORT, () => {
       console.log(`App is listening on port ${PORT}`);
     });
